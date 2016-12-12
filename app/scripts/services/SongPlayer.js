@@ -91,6 +91,12 @@
          */
          SongPlayer.currentTime = null;
 
+         /*
+          * @desc Sets the initial value for volume.
+          * @type {Number}
+          */
+         SongPlayer.volume = 50;
+
         /*** PUBLIC METHODS ***/
 
         /*
@@ -167,6 +173,18 @@
             currentBuzzObject.setTime(time);
           }
         };
+
+        /*
+        * @function setVolume
+        * @desc changes the current volume to that set by the user.
+        * @param none
+        */
+        SongPlayer.setVolume = function(value) {
+          if (currentBuzzObject) {
+            currentBuzzObject.setVolume(value);
+          }
+        };
+
 
         return SongPlayer;
 
