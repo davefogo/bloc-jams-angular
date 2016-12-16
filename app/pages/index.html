@@ -2,8 +2,9 @@
 <html ng-app="blocJams">
 
 <head lang="en">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
     <title>Bloc Jams Angular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
@@ -15,8 +16,8 @@
 </head>
 
 <body>
+    <!-- navigation bar -->
     <nav class="navbar">
-        <!-- navigation bar -->
         <a ui-sref="landing">
             <img src="assets/images/bloc_jams_logo.png" alt="bloc jams logo" class="logo">
         </a>
@@ -26,6 +27,7 @@
     </nav>
 
     <ui-view></ui-view>
+    <div>{{ songPlays }}</div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -34,14 +36,14 @@
     <script src="/scripts/app.js"></script>
     <script src="/scripts/services/Fixtures.js"></script>
     <script src="/scripts/services/SongPlayer.js"></script>
+    <script src="/scripts/services/SongMetrics.js"></script>
     <script src="/scripts/controllers/LandingCtrl.js"></script>
     <script src="/scripts/controllers/CollectionCtrl.js"></script>
     <script src="/scripts/controllers/AlbumCtrl.js"></script>
     <script src="/scripts/controllers/PlayerBarCtrl.js"></script>
+    <script src="/scripts/controllers/MetricCtrl.js"></script>
     <script src="/scripts/directives/seekBar.js"></script>
     <script src="/scripts/filters/timecode.js"></script>
-
-    </script>
 </body>
 
 </html>
