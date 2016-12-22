@@ -21,10 +21,15 @@
                 controller: 'CollectionCtrl as collection',
                 templateUrl: '/templates/collection.html'
             })
+            .state('metrics', {
+                url:'/metrics',
+                controller: 'MetricCtrl as metric',
+                templateUrl: '/templates/metrics.html'
+            })
 
     }
 
     angular
-        .module('blocJams', ['ui.router'])
+        .module('blocJams', ['ui.router', 'nvd3'])
         .config(config);
 })();
