@@ -10,21 +10,19 @@
                 songObj['playedAt'] = new Date();
                 $rootScope.songPlays.push(songObj);
 
-                $rootScope.songCount = $rootScope.songPlays.reduce(function(acc, cv) {
-                    var arr = acc.filter(function(obj) {
-                        return obj.title === cv.title;
+                $rootScope.songCount = $rootScope.songPlays.reduce(function(accumulator, currentValue) {
+                  
+                    var filterArray = accumulator.filter(function(iteratorValue) {
+                        return currentValue.title === iteratorValue.title;
                     });
 
-                    if (arr.length === 0) {
-                        acc.push({
-                            title: cv.title,
-                            playCount: 1
-                        });
+                    if (filterArray.length === 0) {
+                        accumulator.push({ title: currentValue.title, playCount: 1 });
                     } else {
-                        arr[0].playCount += 1;
+                        filterArray[0].playCount += 1;
                     }
 
-                    return acc;
+                    return accumulator;
                 }, []);
             }
         }
