@@ -1,6 +1,7 @@
 (function() {
     function MetricCtrl(SongMetrics, $scope) {
         this.songMetrics = SongMetrics;
+        this.songCounts = this.songMetrics.countSongPlay();
 
         $scope.options = {
             chart: {
@@ -34,7 +35,7 @@
         };
         $scope.data = [{
             key: "Cumulative Return",
-            values: $scope.songCount
+            values: this.songCounts
         }];
     }
 
